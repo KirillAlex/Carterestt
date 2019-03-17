@@ -1,0 +1,15 @@
+c:\users\passa\source\repos\Carterestt\Data\bin\Debug\Data.dll.config
+c:\users\passa\source\repos\Carterestt\Data\bin\Debug\Data.dll
+c:\users\passa\source\repos\Carterestt\Data\bin\Debug\Data.pdb
+c:\users\passa\source\repos\Carterestt\Data\bin\Debug\EntityFramework.dll
+c:\users\passa\source\repos\Carterestt\Data\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\passa\source\repos\Carterestt\Data\bin\Debug\EntityFramework.xml
+c:\users\passa\source\repos\Carterestt\Data\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\passa\source\repos\Carterestt\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+c:\users\passa\source\repos\Carterestt\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
+c:\users\passa\source\repos\Carterestt\Data\obj\Debug\Data.csproj.CopyComplete
+c:\users\passa\source\repos\Carterestt\Data\obj\Debug\Data.dll
+c:\users\passa\source\repos\Carterestt\Data\obj\Debug\Data.pdb
+c:\users\passa\source\repos\Carterestt\Data\obj\Debug\Data.Migrations.InitialCreate.resources
+c:\users\passa\source\repos\Carterestt\Data\obj\Debug\Data.csproj.GenerateResource.cache
+c:\users\passa\source\repos\Carterestt\Data\obj\Debug\Data.Migrations.Initial.resources
