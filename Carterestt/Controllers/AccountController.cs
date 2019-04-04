@@ -86,7 +86,7 @@ namespace Carterestt.Controllers
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("", "Неудачная попытка входа.");
+                    ModelState.AddModelError("", "ERROR invalid login.");
                     return View(model);
             }
         }
@@ -129,7 +129,7 @@ namespace Carterestt.Controllers
                     return View("Lockout");
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("", "Неправильный код.");
+                    ModelState.AddModelError("", "invalid password");
                     return View(model);
             }
         }

@@ -28,14 +28,14 @@ namespace Carterestt.Models
     public class SetPasswordViewModel
     {
         [Required]
-        [StringLength(100, ErrorMessage = "Значение {0} должно содержать символов не менее: {2}.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "Стойността {0} трябва да съдържа поне {2} знака.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Новый пароль")]
+        [Display(Name = "нова парола")]
         public string NewPassword { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Подтверждение нового пароля")]
-        [Compare("NewPassword", ErrorMessage = "Новый пароль и его подтверждение не совпадают.")]
+        [Display(Name = "Потвърдете новата парола")]
+        [Compare("NewPassword", ErrorMessage = "Моля, проверете правилно ли сте написали паролата")]
         public string ConfirmPassword { get; set; }
     }
 
@@ -43,40 +43,23 @@ namespace Carterestt.Models
     {
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Текущий пароль")]
+        [Display(Name = "парола")]
         public string OldPassword { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "Значение {0} должно содержать символов не менее: {2}.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "Стойността {0} трябва да съдържа поне {2} знака.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Новый пароль")]
+        [Display(Name = "нова парола")]
         public string NewPassword { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Подтверждение нового пароля")]
-        [Compare("NewPassword", ErrorMessage = "Новый пароль и его подтверждение не совпадают.")]
+        [Display(Name = "Потвърдете новата парола")]
+        [Compare("NewPassword", ErrorMessage = "Моля, проверете правилно ли сте написали паролата")]
         public string ConfirmPassword { get; set; }
     }
 
-    public class AddPhoneNumberViewModel
-    {
-        [Required]
-        [Phone]
-        [Display(Name = "Номер телефона")]
-        public string Number { get; set; }
-    }
-
-    public class VerifyPhoneNumberViewModel
-    {
-        [Required]
-        [Display(Name = "Код")]
-        public string Code { get; set; }
-
-        [Required]
-        [Phone]
-        [Display(Name = "Номер телефона")]
-        public string PhoneNumber { get; set; }
-    }
+   
+    
 
     public class ConfigureTwoFactorViewModel
     {

@@ -1,51 +1,25 @@
 ﻿@model IEnumerable<Data.Post>
-
 @{
-    ViewBag.Title = "Index";
+    int clear = 1;
 }
+<div class="brand-inner-item">
+    <h2>Всички публикации</h2>
 
-<h2>Index</h2>
+    <div class="row">
+        @foreach (var post in Model)
+        {
+            <div class="col-md-3 col-xs-12 text-center post-item">
+                <img src="~/Images/@post.FileName" class="img-responsive img-thumbnail" alt="@post.Name" />
+                <h3>
+                    @Html.RouteLink(post.Name, new { controller = "Posts", action = "Details", id = post.Id })
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Decription)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FileName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UserId)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Decription)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FileName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserId)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
-
-</table>
+                </h3>
+            </div>
+            if (clear%4==0)
+            {
+                <div class="clearfix"></div>
+            }
+            clear++;
+        }
+    </div>
+</div>

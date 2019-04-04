@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Carterestt.Models;
 using Data;
 using Microsoft.AspNet.Identity;
 
@@ -29,6 +30,17 @@ namespace Carterestt.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Post post = db.Posts.Find(id);
+            ApplicationDbContext applicationDbContext = new ApplicationDbContext();
+            if (post.UserId != null)
+            {
+                var user = applicationDbContext.Users.Find(post.UserId);
+                post.UserId = user.UserName;
+            }
+            else
+            {
+                post.UserId = null;
+            }
+
             if (post == null)
             {
                 return HttpNotFound();
@@ -37,9 +49,12 @@ namespace Carterestt.Controllers
         }
 
         // GET: Posts/Create
+        [Authorize]
         public ActionResult Create()
         {
-            return View();
+            ViewBag.Brands = db.Brands.ToList();
+            return View(
+            );
         }
 
         // POST: Posts/Create
@@ -53,6 +68,10 @@ namespace Carterestt.Controllers
             if (ModelState.IsValid)
             {
                 post.UserId = User.Identity.GetUserId();
+                var brandId = Request.Form["brandId"];
+                post.BrandPosts = new List<BrandPost>() {
+                    new BrandPost() { BrandId = int.Parse(brandId), Post = post }
+                };
                 db.Posts.Add(post);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -61,6 +80,7 @@ namespace Carterestt.Controllers
             return View(post);
         }
 
+        [Authorize]
         // GET: Posts/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -79,6 +99,7 @@ namespace Carterestt.Controllers
         // POST: Posts/Edit/5
         // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
         // сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [Authorize]
         [ValidateAntiForgeryToken]
@@ -95,31 +116,7 @@ namespace Carterestt.Controllers
             return View(post);
         }
 
-        // GET: Posts/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Post post = db.Posts.Find(id);
-            if (post == null)
-            {
-                return HttpNotFound();
-            }
-            return View(post);
-        }
-
-        // POST: Posts/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Post post = db.Posts.Find(id);
-            db.Posts.Remove(post);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
+        
 
         protected override void Dispose(bool disposing)
         {

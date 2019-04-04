@@ -58,6 +58,10 @@
     <Compile Include="Migrations\201903170913042_Initial.Designer.cs">
       <DependentUpon>201903170913042_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904020727138_BrandMigration.cs" />
+    <Compile Include="Migrations\201904020727138_BrandMigration.Designer.cs">
+      <DependentUpon>201904020727138_BrandMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -75,6 +79,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903170913042_Initial.resx">
       <DependentUpon>201903170913042_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904020727138_BrandMigration.resx">
+      <DependentUpon>201904020727138_BrandMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

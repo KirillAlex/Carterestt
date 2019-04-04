@@ -13,3 +13,4 @@ c:\users\passa\source\repos\Carterestt\Data\obj\Debug\Data.pdb
 c:\users\passa\source\repos\Carterestt\Data\obj\Debug\Data.Migrations.InitialCreate.resources
 c:\users\passa\source\repos\Carterestt\Data\obj\Debug\Data.csproj.GenerateResource.cache
 c:\users\passa\source\repos\Carterestt\Data\obj\Debug\Data.Migrations.Initial.resources
+C:\Users\passa\source\repos\Carterestt\Data\obj\Debug\Data.Migrations.BrandMigration.resources
