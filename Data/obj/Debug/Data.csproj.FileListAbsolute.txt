@@ -13,6 +13,7 @@ c:\users\passa\source\repos\Carterestt\Data\obj\Debug\Data.pdb
 c:\users\passa\source\repos\Carterestt\Data\obj\Debug\Data.Migrations.InitialCreate.resources
 c:\users\passa\source\repos\Carterestt\Data\obj\Debug\Data.csproj.GenerateResource.cache
 c:\users\passa\source\repos\Carterestt\Data\obj\Debug\Data.Migrations.Initial.resources
+<<<<<<< HEAD
 C:\Users\passa\source\repos\Carterestt\Data\obj\Debug\Data.Migrations.BrandMigration.resources
 C:\Users\passa\source\repos\Carterestt\Data\bin\Debug\Microsoft.Win32.Primitives.dll
 C:\Users\passa\source\repos\Carterestt\Data\bin\Debug\netstandard.dll
@@ -122,3 +123,5 @@ C:\Users\passa\source\repos\Carterestt\Data\bin\Debug\nunit.framework.pdb
 C:\Users\passa\source\repos\Carterestt\Data\bin\Debug\nunit.framework.xml
 C:\Users\passa\source\repos\Carterestt\Data\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\passa\source\repos\Carterestt\Data\bin\Debug\System.Threading.Tasks.Extensions.xml
+=======
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e

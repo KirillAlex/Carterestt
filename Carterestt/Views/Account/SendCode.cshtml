@@ -1,6 +1,10 @@
 ﻿@model Carterestt.Models.SendCodeViewModel
 @{
+<<<<<<< HEAD
     ViewBag.Title = "Изпрати";
+=======
+    ViewBag.Title = "Отправить";
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
 }
 
 <h2>@ViewBag.Title.</h2>
@@ -12,9 +16,15 @@
     <hr />
     <div class="row">
         <div class="col-md-8">
+<<<<<<< HEAD
             Choosing a two-factor authentication provider:
             @Html.DropDownListFor(model => model.SelectedProvider, Model.Providers)
             <input type="submit" value="Изпрати" class="btn btn-default" />
+=======
+            Выбор поставщика двухфакторной проверки подлинности:
+            @Html.DropDownListFor(model => model.SelectedProvider, Model.Providers)
+            <input type="submit" value="Отправить" class="btn btn-default" />
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
         </div>
     </div>
 }

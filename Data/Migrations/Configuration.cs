@@ -1,7 +1,13 @@
+<<<<<<< HEAD
 ﻿namespace Data.Migrations
 {
     using System;
     using System.Collections.Generic;
+=======
+namespace Data.Migrations
+{
+    using System;
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -14,6 +20,7 @@
             ContextKey = "Data.CarContext";
         }
 
+<<<<<<< HEAD
         /// <summary>
         /// Този метод добавя първоначалната демо информация в БД
         /// </summary>
@@ -83,6 +90,14 @@
 
             );
             context.SaveChanges();
+=======
+        protected override void Seed(Data.CarContext context)
+        {
+            //  This method will be called after migrating to the latest version.
+
+            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
+            //  to avoid creating duplicate seed data.
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
         }
     }
 }

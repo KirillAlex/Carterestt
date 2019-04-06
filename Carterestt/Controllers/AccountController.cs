@@ -11,7 +11,11 @@ using Microsoft.Owin.Security;
 using Carterestt.Models;
 
 namespace Carterestt.Controllers
+<<<<<<< HEAD
 { 
+=======
+{
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
     [Authorize]
     public class AccountController : Controller
     {
@@ -73,7 +77,12 @@ namespace Carterestt.Controllers
                 return View(model);
             }
 
+<<<<<<< HEAD
            
+=======
+            // Сбои при входе не приводят к блокированию учетной записи
+            // Чтобы ошибки при вводе пароля инициировали блокирование учетной записи, замените на shouldLockout: true
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
@@ -85,7 +94,11 @@ namespace Carterestt.Controllers
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
                 case SignInStatus.Failure:
                 default:
+<<<<<<< HEAD
                     ModelState.AddModelError("", "ERROR invalid login.");
+=======
+                    ModelState.AddModelError("", "Неудачная попытка входа.");
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
                     return View(model);
             }
         }
@@ -95,7 +108,11 @@ namespace Carterestt.Controllers
         [AllowAnonymous]
         public async Task<ActionResult> VerifyCode(string provider, string returnUrl, bool rememberMe)
         {
+<<<<<<< HEAD
             
+=======
+            // Требовать предварительный вход пользователя с помощью имени пользователя и пароля или внешнего имени входа
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
             if (!await SignInManager.HasBeenVerifiedAsync())
             {
                 return View("Error");
@@ -115,7 +132,14 @@ namespace Carterestt.Controllers
                 return View(model);
             }
 
+<<<<<<< HEAD
             
+=======
+            // Приведенный ниже код защищает от атак методом подбора, направленных на двухфакторные коды. 
+            // Если пользователь введет неправильные коды за указанное время, его учетная запись 
+            // будет заблокирована на заданный период. 
+            // Параметры блокирования учетных записей можно настроить в IdentityConfig
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
             var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent:  model.RememberMe, rememberBrowser: model.RememberBrowser);
             switch (result)
             {
@@ -125,7 +149,11 @@ namespace Carterestt.Controllers
                     return View("Lockout");
                 case SignInStatus.Failure:
                 default:
+<<<<<<< HEAD
                     ModelState.AddModelError("", "invalid password");
+=======
+                    ModelState.AddModelError("", "Неправильный код.");
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
                     return View(model);
             }
         }
@@ -153,12 +181,25 @@ namespace Carterestt.Controllers
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
+<<<<<<< HEAD
                    
+=======
+                    // Дополнительные сведения о включении подтверждения учетной записи и сброса пароля см. на странице https://go.microsoft.com/fwlink/?LinkID=320771.
+                    // Отправка сообщения электронной почты с этой ссылкой
+                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                    // await UserManager.SendEmailAsync(user.Id, "Подтверждение учетной записи", "Подтвердите вашу учетную запись, щелкнув <a href=\"" + callbackUrl + "\">здесь</a>");
+
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
                     return RedirectToAction("Index", "Home");
                 }
                 AddErrors(result);
             }
 
+<<<<<<< HEAD
+=======
+            // Появление этого сообщения означает наличие ошибки; повторное отображение формы
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
             return View(model);
         }
 
@@ -199,10 +240,22 @@ namespace Carterestt.Controllers
                     return View("ForgotPasswordConfirmation");
                 }
 
+<<<<<<< HEAD
                 
             }
 
             
+=======
+                // Дополнительные сведения о включении подтверждения учетной записи и сброса пароля см. на странице https://go.microsoft.com/fwlink/?LinkID=320771.
+                // Отправка сообщения электронной почты с этой ссылкой
+                // string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
+                // var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);		
+                // await UserManager.SendEmailAsync(user.Id, "Сброс пароля", "Сбросьте ваш пароль, щелкнув <a href=\"" + callbackUrl + "\">здесь</a>");
+                // return RedirectToAction("ForgotPasswordConfirmation", "Account");
+            }
+
+            // Появление этого сообщения означает наличие ошибки; повторное отображение формы
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
             return View(model);
         }
 
@@ -236,7 +289,11 @@ namespace Carterestt.Controllers
             var user = await UserManager.FindByNameAsync(model.Email);
             if (user == null)
             {
+<<<<<<< HEAD
                 
+=======
+                // Не показывать, что пользователь не существует
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
                 return RedirectToAction("ResetPasswordConfirmation", "Account");
             }
             var result = await UserManager.ResetPasswordAsync(user.Id, model.Code, model.Password);
@@ -263,7 +320,11 @@ namespace Carterestt.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult ExternalLogin(string provider, string returnUrl)
         {
+<<<<<<< HEAD
           
+=======
+            // Запрос перенаправления к внешнему поставщику входа
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
             return new ChallengeResult(provider, Url.Action("ExternalLoginCallback", "Account", new { ReturnUrl = returnUrl }));
         }
 
@@ -294,7 +355,11 @@ namespace Carterestt.Controllers
                 return View();
             }
 
+<<<<<<< HEAD
             
+=======
+            // Создание и отправка маркера
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
             if (!await SignInManager.SendTwoFactorCodeAsync(model.SelectedProvider))
             {
                 return View("Error");
@@ -313,7 +378,11 @@ namespace Carterestt.Controllers
                 return RedirectToAction("Login");
             }
 
+<<<<<<< HEAD
             
+=======
+            // Выполнение входа пользователя посредством данного внешнего поставщика входа, если у пользователя уже есть имя входа
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
             var result = await SignInManager.ExternalSignInAsync(loginInfo, isPersistent: false);
             switch (result)
             {
@@ -325,7 +394,11 @@ namespace Carterestt.Controllers
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = false });
                 case SignInStatus.Failure:
                 default:
+<<<<<<< HEAD
                     
+=======
+                    // Если у пользователя нет учетной записи, то ему предлагается создать ее
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
                     ViewBag.ReturnUrl = returnUrl;
                     ViewBag.LoginProvider = loginInfo.Login.LoginProvider;
                     return View("ExternalLoginConfirmation", new ExternalLoginConfirmationViewModel { Email = loginInfo.Email });
@@ -346,7 +419,11 @@ namespace Carterestt.Controllers
 
             if (ModelState.IsValid)
             {
+<<<<<<< HEAD
                 
+=======
+                // Получение сведений о пользователе от внешнего поставщика входа
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
                 var info = await AuthenticationManager.GetExternalLoginInfoAsync();
                 if (info == null)
                 {

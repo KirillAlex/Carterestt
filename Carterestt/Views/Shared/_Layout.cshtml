@@ -4,7 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>@ViewBag.Title – Carterest ASP.NET</title>
+=======
+    <title>@ViewBag.Title – приложение ASP.NET</title>
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -18,6 +22,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+<<<<<<< HEAD
                 @Html.ActionLink("Carterest", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
@@ -28,6 +33,15 @@
                     {
                         <li>@Html.ActionLink("Добавяне на публикация", "Create", "Posts")</li>
                     }
+=======
+                @Html.ActionLink("Имя приложения", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Домашняя страница", "Index", "Home")</li>
+                    <li>@Html.ActionLink("О программе", "About", "Home")</li>
+                    <li>@Html.ActionLink("Контакт", "Contact", "Home")</li>
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -37,7 +51,11 @@
         @RenderBody()
         <hr />
         <footer>
+<<<<<<< HEAD
             <p>&copy; @DateTime.Now.Year – Carterest ASP.NET</p>
+=======
+            <p>&copy; @DateTime.Now.Year – приложение ASP.NET</p>
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
         </footer>
     </div>
 

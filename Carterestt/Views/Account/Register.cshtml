@@ -8,7 +8,11 @@
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
+<<<<<<< HEAD
     <h4>Създайте нов профил.</h4>
+=======
+    <h4>Создайте новую учетную запись.</h4>
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
     <hr />
     @Html.ValidationSummary("", new { @class = "text-danger" })
     <div class="form-group">

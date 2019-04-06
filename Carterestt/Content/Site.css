@@ -22,6 +22,7 @@ select,
 textarea {
     max-width: 280px;
 }
+<<<<<<< HEAD
 
 .brand-inner-item {
     text-align: center;
@@ -201,3 +202,5 @@ textarea {
     .box__button:focus {
         background-color: #0f3c4b;
     }
+=======
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e

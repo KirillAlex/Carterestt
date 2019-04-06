@@ -142,6 +142,7 @@ c:\users\passa\source\repos\Carterestt\Carterestt\bin\Data.pdb
 c:\users\passa\source\repos\Carterestt\Carterestt\bin\Data.dll.config
 c:\users\passa\source\repos\Carterestt\Carterestt\obj\Debug\Carterestt.Migrations.Initial.resources
 c:\users\passa\source\repos\Carterestt\Carterestt\obj\Debug\Carterestt.csproj.GenerateResource.cache
+<<<<<<< HEAD
 C:\Users\passa\source\repos\Carterestt\Carterestt\bin\Microsoft.Win32.Primitives.dll
 C:\Users\passa\source\repos\Carterestt\Carterestt\bin\netstandard.dll
 C:\Users\passa\source\repos\Carterestt\Carterestt\bin\System.AppContext.dll
@@ -250,3 +251,5 @@ C:\Users\passa\source\repos\Carterestt\Carterestt\bin\nunit.framework.pdb
 C:\Users\passa\source\repos\Carterestt\Carterestt\bin\nunit.framework.xml
 C:\Users\passa\source\repos\Carterestt\Carterestt\bin\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\passa\source\repos\Carterestt\Carterestt\bin\System.Threading.Tasks.Extensions.xml
+=======
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e

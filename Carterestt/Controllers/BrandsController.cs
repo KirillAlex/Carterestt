@@ -7,11 +7,15 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Data;
+<<<<<<< HEAD
 using NUnit;
+=======
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
 
 namespace Carterestt.Controllers
 {
     public class BrandsController : Controller
+<<<<<<< HEAD
     { //
       /// <summary>
       /// Този клас управлява (създава , редактира и изтрива) марки 
@@ -19,6 +23,9 @@ namespace Carterestt.Controllers
       /// <remarks>
       ///     Автор: Кирилл Алексеев
       /// </remarks>
+=======
+    {
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
         private CarContext db = new CarContext();
 
         // GET: Brands
@@ -28,7 +35,10 @@ namespace Carterestt.Controllers
         }
 
         // GET: Brands/Details/5
+<<<<<<< HEAD
         
+=======
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -43,16 +53,25 @@ namespace Carterestt.Controllers
             return View(brand);
         }
 
+<<<<<<< HEAD
         [Authorize]
+=======
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
         // GET: Brands/Create
         public ActionResult Create()
         {
             return View();
         }
 
+<<<<<<< HEAD
         // POST: Brands/Create 
         
         [Authorize]
+=======
+        // POST: Brands/Create
+        // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
+        // сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Name,Decription")] Brand brand)
@@ -68,7 +87,10 @@ namespace Carterestt.Controllers
         }
 
         // GET: Brands/Edit/5
+<<<<<<< HEAD
         [Authorize]
+=======
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -84,8 +106,13 @@ namespace Carterestt.Controllers
         }
 
         // POST: Brands/Edit/5
+<<<<<<< HEAD
         
         [Authorize]
+=======
+        // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
+        // сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Name,Decription")] Brand brand)
@@ -100,7 +127,10 @@ namespace Carterestt.Controllers
         }
 
         // GET: Brands/Delete/5
+<<<<<<< HEAD
         [Authorize]
+=======
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -116,7 +146,10 @@ namespace Carterestt.Controllers
         }
 
         // POST: Brands/Delete/5
+<<<<<<< HEAD
         [Authorize]
+=======
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
@@ -135,7 +168,10 @@ namespace Carterestt.Controllers
             }
             base.Dispose(disposing);
         }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
     }
 }

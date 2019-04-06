@@ -1,6 +1,10 @@
 ﻿@model Carterestt.Models.VerifyCodeViewModel
 @{
+<<<<<<< HEAD
     ViewBag.Title = "провери";
+=======
+    ViewBag.Title = "Проверить";
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
 }
 
 <h2>@ViewBag.Title.</h2>
@@ -9,7 +13,11 @@
     @Html.AntiForgeryToken()
     @Html.Hidden("provider", @Model.Provider)
     @Html.Hidden("rememberMe", @Model.RememberMe)
+<<<<<<< HEAD
     <h4>Въведете кода за потвърждение </h4>
+=======
+    <h4>Введите проверочный код</h4>
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
     <hr />
     @Html.ValidationSummary("", new { @class = "text-danger" })
     <div class="form-group">

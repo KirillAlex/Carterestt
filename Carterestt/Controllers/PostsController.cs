@@ -6,11 +6,15 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+<<<<<<< HEAD
 using Carterestt.Models;
+=======
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
 using Data;
 using Microsoft.AspNet.Identity;
 
 namespace Carterestt.Controllers
+<<<<<<< HEAD
 /// <summary>
 /// Този клас създава публикации
 /// </summary>
@@ -18,6 +22,9 @@ namespace Carterestt.Controllers
 ///     Автор: Бюлент Казали
 /// </remarks>
 { 
+=======
+{
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
     public class PostsController : Controller
     {
         private CarContext db = new CarContext();
@@ -36,6 +43,7 @@ namespace Carterestt.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Post post = db.Posts.Find(id);
+<<<<<<< HEAD
             ApplicationDbContext applicationDbContext = new ApplicationDbContext();
             if (post.UserId != null)
             {
@@ -47,6 +55,8 @@ namespace Carterestt.Controllers
                 post.UserId = null;
             }
 
+=======
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
             if (post == null)
             {
                 return HttpNotFound();
@@ -55,6 +65,7 @@ namespace Carterestt.Controllers
         }
 
         // GET: Posts/Create
+<<<<<<< HEAD
         [Authorize]
         public ActionResult Create()
         {
@@ -64,6 +75,16 @@ namespace Carterestt.Controllers
         }
 
         
+=======
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: Posts/Create
+        // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
+        // сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -72,10 +93,13 @@ namespace Carterestt.Controllers
             if (ModelState.IsValid)
             {
                 post.UserId = User.Identity.GetUserId();
+<<<<<<< HEAD
                 var brandId = Request.Form["brandId"];
                 post.BrandPosts = new List<BrandPost>() {
                     new BrandPost() { BrandId = int.Parse(brandId), Post = post }
                 };
+=======
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
                 db.Posts.Add(post);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -84,7 +108,10 @@ namespace Carterestt.Controllers
             return View(post);
         }
 
+<<<<<<< HEAD
         [Authorize]
+=======
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
         // GET: Posts/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -100,8 +127,14 @@ namespace Carterestt.Controllers
             return View(post);
         }
 
+<<<<<<< HEAD
      
         [Authorize]
+=======
+        // POST: Posts/Edit/5
+        // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
+        // сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
         [HttpPost]
         [Authorize]
         [ValidateAntiForgeryToken]
@@ -118,7 +151,35 @@ namespace Carterestt.Controllers
             return View(post);
         }
 
+<<<<<<< HEAD
         
+=======
+        // GET: Posts/Delete/5
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Post post = db.Posts.Find(id);
+            if (post == null)
+            {
+                return HttpNotFound();
+            }
+            return View(post);
+        }
+
+        // POST: Posts/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Post post = db.Posts.Find(id);
+            db.Posts.Remove(post);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+>>>>>>> d198e5d06df4f0db1032d3302f5e1e095185431e
 
         protected override void Dispose(bool disposing)
         {
