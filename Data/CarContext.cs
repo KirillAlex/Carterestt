@@ -7,8 +7,14 @@ using System.Threading.Tasks;
 
 namespace Data
 {
+    /// <summary>
+    /// Този клас описва контекст за достъп до БД
+    /// </summary>
+    /// <remarks>
+    ///     Автор: Петър Павлов
+    /// </remarks>
     public class CarContext: DbContext
-    {
+    {   
         public CarContext() : base("name=Carterest")
         {
 

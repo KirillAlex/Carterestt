@@ -7,11 +7,18 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Data;
+using NUnit;
 
 namespace Carterestt.Controllers
 {
     public class BrandsController : Controller
-    {
+    { //
+      /// <summary>
+      /// Този клас управлява (създава , редактира и изтрива) марки 
+      /// </summary>
+      /// <remarks>
+      ///     Автор: Кирилл Алексеев
+      /// </remarks>
         private CarContext db = new CarContext();
 
         // GET: Brands
@@ -43,9 +50,8 @@ namespace Carterestt.Controllers
             return View();
         }
 
-        // POST: Brands/Create
-        // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
-        // сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Brands/Create 
+        
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -78,8 +84,7 @@ namespace Carterestt.Controllers
         }
 
         // POST: Brands/Edit/5
-        // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
-        // сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -130,5 +135,7 @@ namespace Carterestt.Controllers
             }
             base.Dispose(disposing);
         }
+
+
     }
 }

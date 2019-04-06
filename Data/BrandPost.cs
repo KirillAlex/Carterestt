@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace Data
 {
+    /// <summary>
+    /// Този клас описва връзка между марка и публикация
+    /// </summary>
+    /// <remarks>
+    ///     Автор: Бюлент Казали
+    /// </remarks>
     public class BrandPost
-    {
+    {   
         public int Id { get; set; }
         public int BrandId { get; set; }
         public int PostId { get; set; }

@@ -14,12 +14,15 @@
             ContextKey = "Data.CarContext";
         }
 
+        /// <summary>
+        /// Този метод добавя първоначалната демо информация в БД
+        /// </summary>
+        /// <remarks>
+        ///     Автор: Кирилл Алексеев
+        /// </remarks>
         protected override void Seed(Data.CarContext context)
         {
-            //  This method will be called after migrating to the latest version.
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data.
             context.Posts.AddOrUpdate(
                 new Post() {
                     Id=1,

@@ -11,7 +11,13 @@ using Data;
 using Microsoft.AspNet.Identity;
 
 namespace Carterestt.Controllers
-{
+/// <summary>
+/// Този клас създава публикации
+/// </summary>
+/// <remarks>
+///     Автор: Бюлент Казали
+/// </remarks>
+{ 
     public class PostsController : Controller
     {
         private CarContext db = new CarContext();
@@ -57,9 +63,7 @@ namespace Carterestt.Controllers
             );
         }
 
-        // POST: Posts/Create
-        // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
-        // сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -96,9 +100,7 @@ namespace Carterestt.Controllers
             return View(post);
         }
 
-        // POST: Posts/Edit/5
-        // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
-        // сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
+     
         [Authorize]
         [HttpPost]
         [Authorize]

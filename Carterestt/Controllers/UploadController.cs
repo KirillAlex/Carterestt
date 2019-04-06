@@ -9,7 +9,12 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace Carterestt.Controllers
-{
+{   /// <summary>
+    /// Този клас добавлява картинки към постове
+    /// </summary>
+    /// <remarks>
+    ///     Автор: Кирилл Алексеев
+    /// </remarks>
     public class UploadController : Controller
     {
         [HttpGet]
